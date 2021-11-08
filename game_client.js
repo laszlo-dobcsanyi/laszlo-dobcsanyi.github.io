@@ -9367,16 +9367,6 @@ var ASM_CONSTS = {
     }
 
 
-  function _emscripten_set_element_css_size(target, width, height) {
-      target = findEventTarget(target);
-      if (!target) return -4;
-  
-      target.style.width = width + "px";
-      target.style.height = height + "px";
-  
-      return 0;
-    }
-
   function _emscripten_set_main_loop(func, fps, simulateInfiniteLoop) {
       var browserIterationFunc = wasmTable.get(func);
       setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop);
@@ -10330,7 +10320,6 @@ var asmLibraryArg = {
   "emscripten_request_fullscreen_strategy": _emscripten_request_fullscreen_strategy,
   "emscripten_resize_heap": _emscripten_resize_heap,
   "emscripten_set_canvas_element_size": _emscripten_set_canvas_element_size,
-  "emscripten_set_element_css_size": _emscripten_set_element_css_size,
   "emscripten_set_main_loop": _emscripten_set_main_loop,
   "emscripten_set_resize_callback_on_thread": _emscripten_set_resize_callback_on_thread,
   "exit": _exit,
